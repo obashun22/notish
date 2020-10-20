@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,79 +18,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="コーヒーカップ" translatesAutoresizingMaskIntoConstraints="NO" id="54c-Vz-g7f">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-8f-iF7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="しおり付きの本のアイコン素材" translatesAutoresizingMaskIntoConstraints="NO" id="4ZQ-Qb-5cR">
-                                <rect key="frame" x="127" y="139" width="160" height="160"/>
-                                <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="CXl-nS-Uf4">
+                                <rect key="frame" x="142" y="164" width="130" height="130"/>
+                                <color key="tintColor" name="light-green-dark"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="4ZQ-Qb-5cR" secondAttribute="height" multiplier="1:1" id="ZpN-QX-40Z"/>
-                                    <constraint firstAttribute="width" constant="160" id="k8N-i3-Pxi"/>
+                                    <constraint firstAttribute="width" constant="130" id="PUP-zh-D87"/>
+                                    <constraint firstAttribute="width" secondItem="CXl-nS-Uf4" secondAttribute="height" multiplier="1:1" id="mtw-pk-znz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知で覚える英単語" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO8-IN-KAn">
-                                <rect key="frame" x="43.5" y="379" width="327" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
-                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知で覚える英単語" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-8g-IcT">
+                                <rect key="frame" x="70.5" y="349" width="273" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" name="dark"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-aY-zEO">
-                                <rect key="frame" x="112" y="732" width="190" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-zq-WY5">
+                                <rect key="frame" x="22" y="567" width="370" height="58"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="Dfp-oy-Eo7"/>
-                                    <constraint firstAttribute="height" constant="50" id="aSw-IQ-3c8"/>
+                                    <constraint firstAttribute="height" constant="58" id="pAz-IC-CYW"/>
                                 </constraints>
-                                <state key="normal" title="通知 ON">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <state key="normal" title="＋">
+                                    <color key="titleColor" name="light-green-dark"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNotificationHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYX-WS-IMG"/>
+                                    <action selector="tappedAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NhF-Vg-AYa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzn-DZ-j1J">
-                                <rect key="frame" x="112" y="637" width="190" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-23-uls">
+                                <rect key="frame" x="22" y="657" width="370" height="75"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7q-aG-aqz">
+                                        <rect key="frame" x="294" y="22" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="単語を通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQv-5Z-QZK">
+                                        <rect key="frame" x="27" y="27" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="dark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="KhO-ac-d5y"/>
-                                    <constraint firstAttribute="height" constant="50" id="KyA-xJ-J6n"/>
+                                    <constraint firstAttribute="height" constant="75" id="ATl-Pq-ZMQ"/>
+                                    <constraint firstItem="oQv-5Z-QZK" firstAttribute="leading" secondItem="YGV-23-uls" secondAttribute="leading" constant="27" id="WEn-82-ERs"/>
+                                    <constraint firstItem="oQv-5Z-QZK" firstAttribute="centerY" secondItem="YGV-23-uls" secondAttribute="centerY" id="Xv5-KP-VaP"/>
+                                    <constraint firstAttribute="trailing" secondItem="E7q-aG-aqz" secondAttribute="trailing" constant="27" id="mxD-c4-Irv"/>
+                                    <constraint firstItem="E7q-aG-aqz" firstAttribute="centerY" secondItem="YGV-23-uls" secondAttribute="centerY" id="ww8-O6-ujZ"/>
                                 </constraints>
-                                <state key="normal" title="テストボタン">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="tappedTestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhg-3q-j5N"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pWX-yY-fzW">
+                                <rect key="frame" x="47" y="752" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="cgZ-3f-WV0"/>
+                                    <constraint firstAttribute="height" constant="50" id="rsP-QZ-wci"/>
+                                </constraints>
+                                <string key="text">朝6時から夜12時まで30分おきに単語帳から
+ランダムに単語を通知します</string>
+                                <color key="textColor" name="dark"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="light-gray-dark"/>
                         <constraints>
-                            <constraint firstItem="54c-Vz-g7f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3tz-Hy-gjl"/>
-                            <constraint firstItem="kTK-8f-iF7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AtB-dM-BHh"/>
-                            <constraint firstItem="NO8-IN-KAn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MyU-cc-Ioz"/>
-                            <constraint firstAttribute="bottom" secondItem="kTK-8f-iF7" secondAttribute="bottom" id="NyD-29-CiC"/>
-                            <constraint firstItem="6fT-aY-zEO" firstAttribute="top" secondItem="vzn-DZ-j1J" secondAttribute="bottom" constant="45" id="SyS-Iv-Yp1"/>
-                            <constraint firstItem="4ZQ-Qb-5cR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="Wa5-tB-Iyk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6fT-aY-zEO" secondAttribute="bottom" constant="80" id="Xj1-Mm-hRx"/>
-                            <constraint firstItem="4ZQ-Qb-5cR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="biX-vN-gc7"/>
-                            <constraint firstItem="kTK-8f-iF7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="caA-hn-aYA"/>
-                            <constraint firstItem="6fT-aY-zEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuk-6a-Bzo"/>
-                            <constraint firstItem="kTK-8f-iF7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qpA-vp-sdi"/>
-                            <constraint firstItem="54c-Vz-g7f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rXb-aU-lCk"/>
-                            <constraint firstItem="vzn-DZ-j1J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sYH-zL-wyt"/>
-                            <constraint firstItem="54c-Vz-g7f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y8B-4u-nMQ"/>
-                            <constraint firstItem="NO8-IN-KAn" firstAttribute="top" secondItem="4ZQ-Qb-5cR" secondAttribute="bottom" constant="80" id="yFV-n0-WUe"/>
-                            <constraint firstAttribute="bottom" secondItem="54c-Vz-g7f" secondAttribute="bottom" id="yZe-4r-hAT"/>
+                            <constraint firstItem="CXl-nS-Uf4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0q3-SN-SrQ"/>
+                            <constraint firstItem="pWX-yY-fzW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EVZ-hB-4IV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZzG-zq-WY5" secondAttribute="trailing" constant="22" id="KH5-hh-75x"/>
+                            <constraint firstItem="pWX-yY-fzW" firstAttribute="top" secondItem="YGV-23-uls" secondAttribute="bottom" constant="20" id="PqN-LA-O2A"/>
+                            <constraint firstItem="YGV-23-uls" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="Se6-wg-Ekg"/>
+                            <constraint firstItem="ZzG-zq-WY5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="Upz-D5-baq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YGV-23-uls" secondAttribute="trailing" constant="22" id="W7f-e6-QNa"/>
+                            <constraint firstItem="CXl-nS-Uf4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="XwI-9h-f1C"/>
+                            <constraint firstItem="OXC-8g-IcT" firstAttribute="top" secondItem="CXl-nS-Uf4" secondAttribute="bottom" constant="55" id="hOQ-ue-mdZ"/>
+                            <constraint firstItem="YGV-23-uls" firstAttribute="top" secondItem="ZzG-zq-WY5" secondAttribute="bottom" constant="32" id="lus-9i-81p"/>
+                            <constraint firstItem="ZzG-zq-WY5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="thr-5f-vkK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pWX-yY-fzW" secondAttribute="bottom" constant="60" id="yfq-XB-9l0"/>
+                            <constraint firstItem="OXC-8g-IcT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zGM-Jo-tg6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="notificationHandler" destination="6fT-aY-zEO" id="9IG-ic-sah"/>
+                        <outlet property="addButtonView" destination="ZzG-zq-WY5" id="jIO-q5-pxo"/>
+                        <outlet property="bellImageView" destination="CXl-nS-Uf4" id="Q2x-wX-FPc"/>
+                        <outlet property="notificationToggleSwitch" destination="E7q-aG-aqz" id="hSw-4Z-lkP"/>
+                        <outlet property="notificationToggleView" destination="YGV-23-uls" id="zf7-MV-Jlw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,13 +113,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="しおり付きの本のアイコン素材" width="512" height="512"/>
-        <image name="コーヒーカップ" width="800" height="533"/>
+        <image name="bell" width="512" height="512"/>
+        <namedColor name="dark">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light-gray-dark">
+            <color red="0.95300000905990601" green="0.95300000905990601" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light-green-dark">
+            <color red="0.58300000429153442" green="0.72299998998641968" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

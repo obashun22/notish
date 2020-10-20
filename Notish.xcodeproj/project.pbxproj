@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0EBB020253A055D00EABC59 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EBB01F253A055D00EABC59 /* Vocabulary.swift */; };
 		C0F850AE253757D700DA21AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F850AD253757D700DA21AF /* AppDelegate.swift */; };
 		C0F850B0253757D700DA21AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F850AF253757D700DA21AF /* SceneDelegate.swift */; };
 		C0F850B2253757D700DA21AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F850B1253757D700DA21AF /* ViewController.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C0EBB01F253A055D00EABC59 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		C0F850AA253757D700DA21AF /* Notish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F850AD253757D700DA21AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F850AF253757D700DA21AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,14 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C0EBB01E253A053500EABC59 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				C0EBB01F253A055D00EABC59 /* Vocabulary.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		C0F850A1253757D700DA21AF = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +58,6 @@
 		C0F850AC253757D700DA21AF /* Notish */ = {
 			isa = PBXGroup;
 			children = (
-				C0EBB01E253A053500EABC59 /* Source */,
 				C0F850CC253807EF00DA21AF /* Extension */,
 				C0F850AD253757D700DA21AF /* AppDelegate.swift */,
 				C0F850AF253757D700DA21AF /* SceneDelegate.swift */,
@@ -160,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F850B2253757D700DA21AF /* ViewController.swift in Sources */,
-				C0EBB020253A055D00EABC59 /* Vocabulary.swift in Sources */,
 				C0F850CE2538080A00DA21AF /* UIColor.swift in Sources */,
 				C0F850AE253757D700DA21AF /* AppDelegate.swift in Sources */,
 				C0F850B0253757D700DA21AF /* SceneDelegate.swift in Sources */,
