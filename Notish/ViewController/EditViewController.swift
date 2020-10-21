@@ -20,8 +20,8 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func tappedAddButtonView(_ sender: Any) {
-        let word = wordTextField.text ?? ""
-        let meaning = meaningTextField.text ?? ""
+        guard let word = wordTextField.text else { return }
+        guard let meaning = meaningTextField.text else { return }
         if word == "" {
             wordAlertLabel.isHidden = false
         } else {
@@ -33,9 +33,16 @@ class EditViewController: UIViewController {
             meaningAlertLabel.isHidden = true
         }
         if !word.isEmpty && !meaning.isEmpty {
+            var book = UserDefaults.standard.dictionary(forKey: "book")!
+            book.updateValue(meaning, forKey: word)
+            UserDefaults.standard.setValue(book, forKey: "book")
+            if UserDefaults.standard.bool(forKey: "willNotice") {
+                noticeVocabulary()
+            }
             
-            // データを変更する処理
-            
+            let preNC = self.presentingViewController as! UINavigationController
+            let preVC = preNC.viewControllers[preNC.viewControllers.count - 1] as! BookViewController
+            preVC.vocabularyTableView.reloadData()
             dismiss(animated: true, completion: nil)
         }
     }
@@ -58,5 +65,15 @@ extension EditViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         wordTextField.resignFirstResponder()
         meaningTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let trimmedText = textField.text?.trimmingCharacters(in: .whitespaces)
+        if trimmedText == "" {
+            textField.text = ""
+        } else {
+            textField.text = trimmedText
+        }
+        return true
     }
 }
