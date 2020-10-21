@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "※単語を入力してください"; ObjectID = "Bpc-PH-55k"; */
+"Bpc-PH-55k.text" = "※単語を入力してください";
+
+/* Class = "UILabel"; text = "通知で覚える英単語"; ObjectID = "OXC-8g-IcT"; */
+"OXC-8g-IcT.text" = "通知で覚える英単語";
+
+/* Class = "UIButton"; normalTitle = "＋"; ObjectID = "YsC-tv-NGE"; */
+"YsC-tv-NGE.normalTitle" = "＋";
+
+/* Class = "UIButton"; normalTitle = "＋"; ObjectID = "ZzG-zq-WY5"; */
+"ZzG-zq-WY5.normalTitle" = "＋";
+
+/* Class = "UINavigationItem"; title = "編集"; ObjectID = "aOl-Dj-e98"; */
+"aOl-Dj-e98.title" = "編集";
+
+/* Class = "UITextField"; placeholder = "意味を入力してください"; ObjectID = "ak9-7h-osP"; */
+"ak9-7h-osP.placeholder" = "意味を入力してください";
+
+/* Class = "UILabel"; text = "Word"; ObjectID = "bas-dy-lJ6"; */
+"bas-dy-lJ6.text" = "Word";
+
+/* Class = "UIButton"; normalTitle = "追加"; ObjectID = "h2H-gK-U0V"; */
+"h2H-gK-U0V.normalTitle" = "追加";
+
+/* Class = "UITextField"; placeholder = "単語を入力してください"; ObjectID = "h8e-o8-HRa"; */
+"h8e-o8-HRa.placeholder" = "単語を入力してください";
+
+/* Class = "UILabel"; text = "※意味を入力してください"; ObjectID = "hbN-Ow-P8d"; */
+"hbN-Ow-P8d.text" = "※意味を入力してください";
+
+/* Class = "UILabel"; text = "Version 1.0"; ObjectID = "ig6-2x-Yaa"; */
+"ig6-2x-Yaa.text" = "Version 1.0";
+
+/* Class = "UILabel"; text = "単語を通知"; ObjectID = "oQv-5Z-QZK"; */
+"oQv-5Z-QZK.text" = "単語を通知";
+
+/* Class = "UITextView"; text = "朝6時から夜12時まで30分おきに単語帳から\nランダムに単語を通知します"; ObjectID = "pWX-yY-fzW"; */
+"pWX-yY-fzW.text" = "朝6時から夜12時まで30分おきに単語帳から\nランダムに単語を通知します";
+
+/* Class = "UILabel"; text = "意味"; ObjectID = "wha-L3-gX8"; */
+"wha-L3-gX8.text" = "意味";
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "zGn-cJ-KEw"; */
+"zGn-cJ-KEw.title" = "戻る";

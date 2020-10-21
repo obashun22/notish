@@ -42,8 +42,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         firstTimeSetup()
+        setupView()
     }
     
     // 初回起動時にbookとwillNoticeプロパティを作成／通知をオンに
