@@ -7,8 +7,6 @@
 
 /*
 ToDo
-リポジトリ名
-初期単語を考える
 AdModの導入
 リファクタリング
 */
@@ -61,7 +59,12 @@ class HomeViewController: UIViewController {
         notificationToggleView.layer.cornerRadius = cornerRadius
         
         if UserDefaults.standard.dictionary(forKey: "book") == nil {
-            let dic: [String: String] = ["Apple": "リンゴ"]
+            let dic: [String: String] = [
+                "prospect": "可能性・見込み",
+                "assume": "〜だと考える",
+                "principle": "原理・主義",
+                "depend on": "〜次第である",
+            ]
             UserDefaults.standard.setValue(dic, forKey: "book")
             UserDefaults.standard.setValue(true, forKey: "willNotice")
             noticeVocabulary()
@@ -103,9 +106,9 @@ func noticeVocabulary() {
         content.title = "通知で覚える英単語"
         content.body = "単語帳に新しい英単語を追加しましょう！"
         content.sound = UNNotificationSound.default
-//        let date = DateComponents(hour: 19)
-//        let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let date = DateComponents(hour: 19)
+        let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
         let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
         
@@ -118,8 +121,8 @@ func noticeVocabulary() {
         return
     }
     
-    for hour in [16] {
-        for minute in 1...60 {
+    for hour in 6...23 {
+        for minute in [0, 30] {
             if count >= bookWords.count { count = 0 }
             let word = bookWords[count]
             let meaning = book[word] as! String

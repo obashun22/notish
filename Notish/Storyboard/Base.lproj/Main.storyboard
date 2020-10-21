@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Notish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Tsutan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
         <!--Book View Controller-->
         <scene sceneID="eAp-GL-wVR">
             <objects>
-                <viewController storyboardIdentifier="BookViewController" id="c3g-jE-X8h" customClass="BookViewController" customModule="Notish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookViewController" id="c3g-jE-X8h" customClass="BookViewController" customModule="Tsutan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zEz-Oo-I2h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,7 +216,7 @@
         <!--Edit View Controller-->
         <scene sceneID="h3f-rt-7Lp">
             <objects>
-                <viewController id="Xbx-qj-WOJ" customClass="EditViewController" customModule="Notish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xbx-qj-WOJ" customClass="EditViewController" customModule="Tsutan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7L-1q-4aq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

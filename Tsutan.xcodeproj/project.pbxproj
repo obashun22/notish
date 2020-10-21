@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		C00AB998253F0FCF00F3AE0D /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		C0DCEE5D253F4A9E00EA9905 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		C0F850AA253757D700DA21AF /* Notish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F850AA253757D700DA21AF /* Tsutan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tsutan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F850AD253757D700DA21AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F850AF253757D700DA21AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C0F850B1253757D700DA21AF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		C0F850AB253757D700DA21AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0F850AA253757D700DA21AF /* Notish.app */,
+				C0F850AA253757D700DA21AF /* Tsutan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C0F850A9253757D700DA21AF /* Notish */ = {
+		C0F850A9253757D700DA21AF /* Tsutan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0F850BE253757DB00DA21AF /* Build configuration list for PBXNativeTarget "Notish" */;
+			buildConfigurationList = C0F850BE253757DB00DA21AF /* Build configuration list for PBXNativeTarget "Tsutan" */;
 			buildPhases = (
 				C0F850A6253757D700DA21AF /* Sources */,
 				C0F850A7253757D700DA21AF /* Frameworks */,
@@ -115,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = Notish;
+			name = Tsutan;
 			productName = Notish;
-			productReference = C0F850AA253757D700DA21AF /* Notish.app */;
+			productReference = C0F850AA253757D700DA21AF /* Tsutan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0F850A5253757D700DA21AF /* Build configuration list for PBXProject "Notish" */;
+			buildConfigurationList = C0F850A5253757D700DA21AF /* Build configuration list for PBXProject "Tsutan" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,7 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C0F850A9253757D700DA21AF /* Notish */,
+				C0F850A9253757D700DA21AF /* Tsutan */,
 			);
 		};
 /* End PBXProject section */
@@ -330,7 +330,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Notish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Tsutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Notish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Tsutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0F850A5253757D700DA21AF /* Build configuration list for PBXProject "Notish" */ = {
+		C0F850A5253757D700DA21AF /* Build configuration list for PBXProject "Tsutan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0F850BC253757DB00DA21AF /* Debug */,
@@ -369,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0F850BE253757DB00DA21AF /* Build configuration list for PBXNativeTarget "Notish" */ = {
+		C0F850BE253757DB00DA21AF /* Build configuration list for PBXNativeTarget "Tsutan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0F850BF253757DB00DA21AF /* Debug */,
