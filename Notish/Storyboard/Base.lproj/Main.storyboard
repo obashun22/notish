@@ -237,8 +237,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語を入力してください" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-o8-HRa">
-                                <rect key="frame" x="27" y="98.5" width="360" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語を入力してください" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-o8-HRa">
+                                <rect key="frame" x="27" y="348.5" width="360" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="r6H-hT-P9H"/>
@@ -246,8 +246,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="意味を入力してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-7h-osP">
-                                <rect key="frame" x="27" y="178.5" width="360" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="意味を入力してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-7h-osP">
+                                <rect key="frame" x="27" y="448.5" width="360" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="nxR-df-Wxj"/>
@@ -271,13 +271,13 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※単語を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpc-PH-55k">
-                                <rect key="frame" x="27" y="151.5" width="154" height="16"/>
+                                <rect key="frame" x="27" y="401.5" width="154" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※意味を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbN-Ow-P8d">
-                                <rect key="frame" x="27" y="231.5" width="154" height="16"/>
+                                <rect key="frame" x="27" y="501.5" width="154" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
@@ -292,7 +292,7 @@
                             <constraint firstItem="h8e-o8-HRa" firstAttribute="centerX" secondItem="R7L-1q-4aq" secondAttribute="centerX" id="4fH-Lj-fzR"/>
                             <constraint firstItem="Bpc-PH-55k" firstAttribute="top" secondItem="h8e-o8-HRa" secondAttribute="bottom" constant="8" symbolic="YES" id="6Ze-FI-Ynx"/>
                             <constraint firstItem="Bpc-PH-55k" firstAttribute="leading" secondItem="h8e-o8-HRa" secondAttribute="leading" id="7aI-sq-Qwe"/>
-                            <constraint firstItem="h8e-o8-HRa" firstAttribute="centerY" secondItem="R7L-1q-4aq" secondAttribute="centerY" constant="-300" id="7i8-Z8-tkl"/>
+                            <constraint firstItem="h8e-o8-HRa" firstAttribute="centerY" secondItem="R7L-1q-4aq" secondAttribute="centerY" constant="-50" id="7i8-Z8-tkl"/>
                             <constraint firstItem="hbN-Ow-P8d" firstAttribute="top" secondItem="ak9-7h-osP" secondAttribute="bottom" constant="8" symbolic="YES" id="8j8-Od-ENs"/>
                             <constraint firstItem="VGP-Yd-XsO" firstAttribute="top" secondItem="SXc-RZ-lSp" secondAttribute="top" id="8ut-0s-5ui"/>
                             <constraint firstItem="SXc-RZ-lSp" firstAttribute="trailing" secondItem="h2H-gK-U0V" secondAttribute="trailing" constant="22" id="DeW-j9-5Vm"/>
@@ -301,7 +301,7 @@
                             <constraint firstItem="VGP-Yd-XsO" firstAttribute="trailing" secondItem="SXc-RZ-lSp" secondAttribute="trailing" id="QM5-yk-RQ3"/>
                             <constraint firstItem="SXc-RZ-lSp" firstAttribute="bottom" secondItem="h2H-gK-U0V" secondAttribute="bottom" constant="50" id="Svz-wF-hUx"/>
                             <constraint firstItem="h2H-gK-U0V" firstAttribute="centerX" secondItem="R7L-1q-4aq" secondAttribute="centerX" id="ihH-ZZ-Fi3"/>
-                            <constraint firstItem="ak9-7h-osP" firstAttribute="centerY" secondItem="R7L-1q-4aq" secondAttribute="centerY" constant="-220" id="r3q-9V-h43"/>
+                            <constraint firstItem="ak9-7h-osP" firstAttribute="centerY" secondItem="R7L-1q-4aq" secondAttribute="centerY" constant="50" id="r3q-9V-h43"/>
                             <constraint firstItem="h2H-gK-U0V" firstAttribute="leading" secondItem="SXc-RZ-lSp" secondAttribute="leading" constant="22" id="tgs-HO-7xY"/>
                             <constraint firstItem="ak9-7h-osP" firstAttribute="centerX" secondItem="R7L-1q-4aq" secondAttribute="centerX" id="wkq-aA-hqu"/>
                             <constraint firstItem="VGP-Yd-XsO" firstAttribute="leading" secondItem="SXc-RZ-lSp" secondAttribute="leading" id="ycm-nt-Z6t"/>

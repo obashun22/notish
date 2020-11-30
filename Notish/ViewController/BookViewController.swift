@@ -83,37 +83,87 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
-    // 削除操作できるように許可
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "編集") { (_, _, completionHandler) in
+            self.editVocabulary(index: indexPath.row)
+            print("tapped edit cell")
+            completionHandler(true)
+        }
+        let deleteAction = UIContextualAction(style: .destructive, title: "削除") { (_, _, completionHandler) in
+            print("tapped delete action")
+            self.deleteCell(indexPath: indexPath)
+            completionHandler(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
-    // Delete操作のtitleを設定
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "削除"
+    func editVocabulary(index: Int) {
+        self.performSegue(withIdentifier: "toEditViewController", sender: index)
+        
+        
     }
     
-    // 削除されたときの処理
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            // 先にbookから単語と意味を削除
-            var book = UserDefaults.standard.dictionary(forKey: "book")!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditViewController" {
+            let nextVC = segue.destination as! EditViewController
+            // タップされた行番号を取得
+            guard let index = sender as? Int else { return }
+            // bookから単語と意味を取得
+            let book = UserDefaults.standard.dictionary(forKey: "book")!
             // bookWordsは大文字小文字区別せずにa, z順で並べ替え
             let bookWords = book.keys.sorted { (word1, word2) -> Bool in
                 return word1.lowercased() < word2.lowercased()
             }
-            let word = bookWords[indexPath.row]
-            book.removeValue(forKey: word)
-            UserDefaults.standard.setValue(book, forKey: "book")
-            // TableViewからも削除
-            vocabularyTableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-            print("\(word)を削除しました")
-            // もじ通知オン設定だったら削除後のbookで通知するよう再設定
-            if UserDefaults.standard.bool(forKey: "willNotice") {
-                noticeVocabulary()
-            }
+            let word = bookWords[index]
+            let meaning = book[bookWords[index]] as! String
+            
+            nextVC.setupWord = word
+            nextVC.setupMeaning = meaning
+            
         }
     }
+    
+    func deleteCell(indexPath: IndexPath) {
+        // 先にbookから単語と意味を削除
+        var book = UserDefaults.standard.dictionary(forKey: "book")!
+        // bookWordsは大文字小文字区別せずにa, z順で並べ替え
+        let bookWords = book.keys.sorted { (word1, word2) -> Bool in
+            return word1.lowercased() < word2.lowercased()
+        }
+        let word = bookWords[indexPath.row]
+        book.removeValue(forKey: word)
+        UserDefaults.standard.setValue(book, forKey: "book")
+        // TableViewからも削除
+        vocabularyTableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        print("\(word)を削除しました")
+        // もし通知オン設定だったら削除後のbookで通知するよう再設定
+        if UserDefaults.standard.bool(forKey: "willNotice") {
+            noticeVocabulary()
+        }
+    }
+//    
+//    // 削除されたときの処理
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            // 先にbookから単語と意味を削除
+//            var book = UserDefaults.standard.dictionary(forKey: "book")!
+//            // bookWordsは大文字小文字区別せずにa, z順で並べ替え
+//            let bookWords = book.keys.sorted { (word1, word2) -> Bool in
+//                return word1.lowercased() < word2.lowercased()
+//            }
+//            let word = bookWords[indexPath.row]
+//            book.removeValue(forKey: word)
+//            UserDefaults.standard.setValue(book, forKey: "book")
+//            // TableViewからも削除
+//            vocabularyTableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+//            print("\(word)を削除しました")
+//            // もじ通知オン設定だったら削除後のbookで通知するよう再設定
+//            if UserDefaults.standard.bool(forKey: "willNotice") {
+//                noticeVocabulary()
+//            }
+//        }
+//    }
+    
     
     // cellを作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

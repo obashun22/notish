@@ -8,6 +8,10 @@
 /*
 ToDo
 AdModの導入
+ 
+UserDefaults.standard
+- book: Dic; 単語情報
+- willNotice: Bool; 通知の許可
 */
 
 import UIKit

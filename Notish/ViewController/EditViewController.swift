@@ -15,6 +15,11 @@ class EditViewController: UIViewController {
     @IBOutlet weak var meaningAlertLabel: UILabel!
     @IBOutlet weak var addButtonView: UIButton!
     
+    // performSegueは未インスタンスなのでここに値渡し
+    // textFieldに入力される
+    var setupWord = ""
+    var setupMeaning = ""
+    
     @IBAction func tappedCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -36,6 +41,10 @@ class EditViewController: UIViewController {
         // どちらも空でなければbookに登録
         if !word.isEmpty && !meaning.isEmpty {
             var book = UserDefaults.standard.dictionary(forKey: "book")!
+            // もし編集からsetupWordに単語が渡されていたらその単語を削除
+            if setupWord != "" {
+                book.removeValue(forKey: setupWord)
+            }
             book.updateValue(meaning, forKey: word)
             UserDefaults.standard.setValue(book, forKey: "book")
             // もし通知オン設定だったら通知を更新
@@ -57,6 +66,8 @@ class EditViewController: UIViewController {
         wordTextField.delegate = self
         meaningTextField.delegate = self
         addButtonView.layer.cornerRadius = 18
+        wordTextField.text = setupWord
+        meaningTextField.text = setupMeaning
     }
     
 }
