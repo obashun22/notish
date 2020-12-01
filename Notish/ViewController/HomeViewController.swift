@@ -20,11 +20,11 @@ class HomeViewController: UIViewController {
     
     private let cornerRadius: CGFloat = 18
     
-    @IBOutlet weak var titleView: UIView!
-    @IBOutlet weak var bellImageView: UIImageView!
-    @IBOutlet weak var openBookButtonView: UIButton!
-    @IBOutlet weak var notificationToggleView: UIView!
-    @IBOutlet weak var toggleSwitch: UISwitch!
+    @IBOutlet weak var showBookButton: UIView!
+    @IBOutlet weak var notificationSettingView: UIView!
+    @IBOutlet weak var toggleNotificationSwitch: UISwitch!
+    @IBOutlet weak var intervalSettingView: UIView!
+    @IBOutlet weak var toggleIntervalSwitch: UISegmentedControl!
     
     @IBAction func switchedToggleSwitch(_ sender: UISwitch) {
         if sender.isOn {
@@ -36,17 +36,27 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func tappedAddButton(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.firstTimeSetup()
+        self.setupView()
+        self.addTapGesture()
+    }
+    
+    private func addTapGesture() {
+        // タップジェスチャーを作成します。
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTap(_:)))
+        // シングルタップで反応するように設定します。
+        singleTapGesture.numberOfTapsRequired = 1
+        // ビューにジェスチャーを設定します。
+        self.showBookButton.addGestureRecognizer(singleTapGesture)
+    }
+    
+    @objc private func singleTap(_ gesture: UITapGestureRecognizer) {
+        // Book画面を表示
         let storyboard = self.storyboard!
         let bookViewController = storyboard.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
         navigationController?.pushViewController(bookViewController, animated: true)
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        firstTimeSetup()
-        setupView()
     }
     
     // 初回起動時にbookとwillNoticeプロパティを作成／通知をオンに
@@ -67,26 +77,18 @@ class HomeViewController: UIViewController {
     
     // 各種Viewのセットアップ
     private func setupView() {
-        // titleViewのセットアップ
-        titleView.layer.cornerRadius = 37
-        
-        // bellImageViewのセットアップ
-        let angle = 8.69 * CGFloat.pi / 180
-        let transRotate = CGAffineTransform(rotationAngle: CGFloat(angle))
-        bellImageView.transform = transRotate
-        
-        // addButtonViewのセットアップ
-        openBookButtonView.layer.cornerRadius = cornerRadius
-
-        // notificationToggleViewのセットアップ
-        notificationToggleView.layer.cornerRadius = cornerRadius
+        // 各カードのセットアップ
+        showBookButton.layer.cornerRadius = cornerRadius
+        notificationSettingView.layer.cornerRadius = cornerRadius
+        intervalSettingView.layer.cornerRadius = cornerRadius
+        toggleIntervalSwitch.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         // SwitchViewの切り替え
         let willNotice = UserDefaults.standard.bool(forKey: "willNotice")
         if willNotice {
-            toggleSwitch.isOn = true
+            toggleNotificationSwitch.isOn = true
         } else {
-            toggleSwitch.isOn = false
+            toggleNotificationSwitch.isOn = false
         }
     }
     

@@ -119,7 +119,6 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             
             nextVC.setupWord = word
             nextVC.setupMeaning = meaning
-            
         }
     }
     
