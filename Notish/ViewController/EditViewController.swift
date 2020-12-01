@@ -10,13 +10,11 @@ import UIKit
 class EditViewController: UIViewController {
     
     @IBOutlet weak var wordTextField: UITextField!
-    @IBOutlet weak var wordAlertLabel: UILabel!
     @IBOutlet weak var meaningTextField: UITextField!
-    @IBOutlet weak var meaningAlertLabel: UILabel!
     @IBOutlet weak var addButtonView: UIButton!
     
     // performSegueは未インスタンスなのでここに値渡し
-    // textFieldに入力される
+    // textFieldに入力される／この値が""かどうかで編集から遷移したかどうかを判定
     var setupWord = ""
     var setupMeaning = ""
     
@@ -27,17 +25,6 @@ class EditViewController: UIViewController {
     @IBAction func tappedAddButtonView(_ sender: Any) {
         guard let word = wordTextField.text else { return }
         guard let meaning = meaningTextField.text else { return }
-        // TextFieldが空文字だったら注意文を表示
-        if word == "" {
-            wordAlertLabel.isHidden = false
-        } else {
-            wordAlertLabel.isHidden = true
-        }
-        if meaning == ""{
-            meaningAlertLabel.isHidden = false
-        } else {
-            meaningAlertLabel.isHidden = true
-        }
         // どちらも空でなければbookに登録
         if !word.isEmpty && !meaning.isEmpty {
             var book = UserDefaults.standard.dictionary(forKey: "book")!
@@ -66,10 +53,14 @@ class EditViewController: UIViewController {
         wordTextField.delegate = self
         meaningTextField.delegate = self
         addButtonView.layer.cornerRadius = 18
+        addButtonView.setTitleColor(.init(white: 1, alpha: 0.5), for: .disabled)
+        // 編集から遷移して初期値がある場合はisEnableをtrueにする通常はfalse
+        if setupWord == "" {
+            addButtonView.isEnabled = false
+        }
         wordTextField.text = setupWord
         meaningTextField.text = setupMeaning
     }
-    
 }
 
 extension EditViewController: UITextFieldDelegate {
@@ -84,8 +75,9 @@ extension EditViewController: UITextFieldDelegate {
         meaningTextField.resignFirstResponder()
     }
     
-    // テキストの入力が終わったときテキストの両端の余分な空白を取り除いて処理
+    // テキストの入力が終わったときの処理
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        // テキストの両端の余分な空白を取り除いて処理
         let trimmedText = textField.text?.trimmingCharacters(in: .whitespaces)
         // 空文字だったらTextFieldを空にしてあげる
         if trimmedText == "" {
@@ -94,6 +86,26 @@ extension EditViewController: UITextFieldDelegate {
             // 余分な空白を削除して表示
             textField.text = trimmedText
         }
+        self.checkAddButtonShouldEnable()
+        return true
+    }
+    
+    // add-btnを有効にするかチェックして問題ない場合は有効にする
+    private func checkAddButtonShouldEnable() {
+        let word = wordTextField.text!
+        let meaning = meaningTextField.text!
+        print("word: '\(word)'")
+        print("meaning: '\(meaning)'")
+        if word != "" && meaning != "" {
+            addButtonView.isEnabled = true
+        } else {
+            addButtonView.isEnabled = false
+        }
+    }
+    
+    // clear-btnが押された時点でadd-btnを無効にする
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        addButtonView.isEnabled = false
         return true
     }
 }

@@ -237,7 +237,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語を入力してください" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-o8-HRa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="単語を入力してください" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-o8-HRa">
                                 <rect key="frame" x="27" y="348.5" width="360" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -270,30 +270,14 @@
                                     <action selector="tappedAddButtonView:" destination="Xbx-qj-WOJ" eventType="touchUpInside" id="hOj-0U-fA6"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※単語を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpc-PH-55k">
-                                <rect key="frame" x="27" y="401.5" width="154" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="red"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※意味を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbN-Ow-P8d">
-                                <rect key="frame" x="27" y="501.5" width="154" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="red"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SXc-RZ-lSp"/>
                         <color key="backgroundColor" name="light-brown"/>
                         <constraints>
-                            <constraint firstItem="hbN-Ow-P8d" firstAttribute="leading" secondItem="ak9-7h-osP" secondAttribute="leading" id="0V5-N1-348"/>
                             <constraint firstItem="h8e-o8-HRa" firstAttribute="leading" secondItem="SXc-RZ-lSp" secondAttribute="leading" constant="27" id="0iW-Uc-QB1"/>
                             <constraint firstItem="ak9-7h-osP" firstAttribute="leading" secondItem="SXc-RZ-lSp" secondAttribute="leading" constant="27" id="3sm-Um-0KR"/>
                             <constraint firstItem="h8e-o8-HRa" firstAttribute="centerX" secondItem="R7L-1q-4aq" secondAttribute="centerX" id="4fH-Lj-fzR"/>
-                            <constraint firstItem="Bpc-PH-55k" firstAttribute="top" secondItem="h8e-o8-HRa" secondAttribute="bottom" constant="8" symbolic="YES" id="6Ze-FI-Ynx"/>
-                            <constraint firstItem="Bpc-PH-55k" firstAttribute="leading" secondItem="h8e-o8-HRa" secondAttribute="leading" id="7aI-sq-Qwe"/>
                             <constraint firstItem="h8e-o8-HRa" firstAttribute="centerY" secondItem="R7L-1q-4aq" secondAttribute="centerY" constant="-50" id="7i8-Z8-tkl"/>
-                            <constraint firstItem="hbN-Ow-P8d" firstAttribute="top" secondItem="ak9-7h-osP" secondAttribute="bottom" constant="8" symbolic="YES" id="8j8-Od-ENs"/>
                             <constraint firstItem="VGP-Yd-XsO" firstAttribute="top" secondItem="SXc-RZ-lSp" secondAttribute="top" id="8ut-0s-5ui"/>
                             <constraint firstItem="SXc-RZ-lSp" firstAttribute="trailing" secondItem="h2H-gK-U0V" secondAttribute="trailing" constant="22" id="DeW-j9-5Vm"/>
                             <constraint firstItem="SXc-RZ-lSp" firstAttribute="trailing" secondItem="h8e-o8-HRa" secondAttribute="trailing" constant="27" id="OKt-Jy-iqa"/>
@@ -310,9 +294,7 @@
                     <navigationItem key="navigationItem" id="deN-lA-xlj"/>
                     <connections>
                         <outlet property="addButtonView" destination="h2H-gK-U0V" id="LcQ-D2-D2F"/>
-                        <outlet property="meaningAlertLabel" destination="hbN-Ow-P8d" id="d6M-px-zdN"/>
                         <outlet property="meaningTextField" destination="ak9-7h-osP" id="ZIq-gA-ob3"/>
-                        <outlet property="wordAlertLabel" destination="Bpc-PH-55k" id="3DH-Ph-TL9"/>
                         <outlet property="wordTextField" destination="h8e-o8-HRa" id="wvf-P2-HXo"/>
                     </connections>
                 </viewController>
@@ -347,13 +329,10 @@
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light-brown">
-            <color red="0.95294117647058818" green="0.94117647058823528" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.95300000905990601" green="0.94099998474121094" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="light-green">
             <color red="0.51399999856948853" green="0.7369999885559082" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="red">
-            <color red="0.79199999570846558" green="0.16099999845027924" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
