@@ -120,6 +120,9 @@
                                             <segment title="30 min"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" name="light-green"/>
+                                        <connections>
+                                            <action selector="tappedIntervalSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="UQE-1a-G7q"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,6 +166,7 @@
                         <outlet property="showBookButton" destination="P3J-66-D5q" id="grf-Kq-ri4"/>
                         <outlet property="toggleIntervalSwitch" destination="MRl-8b-mKE" id="rmk-Xc-QuO"/>
                         <outlet property="toggleNotificationSwitch" destination="E7q-aG-aqz" id="bIX-pP-mAc"/>
+                        <segue destination="c3g-jE-X8h" kind="show" id="Pcg-QI-dps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -178,7 +182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-VZ-L9Y">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" name="light-brown"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellId" textLabel="bas-dy-lJ6" detailTextLabel="wha-L3-gX8" rowHeight="55" style="IBUITableViewCellStyleValue1" id="eFT-4d-ggB">
@@ -392,7 +396,7 @@
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="dark-green">
-            <color red="0.44315427674506175" green="0.63876110406091369" blue="0.19968052506558773" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.44299998879432678" green="0.63899999856948853" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="gray">
             <color red="0.42899999022483826" green="0.42699998617172241" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

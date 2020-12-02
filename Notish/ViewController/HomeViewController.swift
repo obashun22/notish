@@ -8,13 +8,16 @@
 /*
 ToDo
 AdModの導入
-UserDefaults.standard
+userDefaults
 - book: Dic; 単語情報
 - willNotice: Bool; 通知の許可
+- interval: 30 min/1 hour:
 */
 
 import UIKit
 import UserNotifications
+
+private let userDefaults = UserDefaults.standard
 
 class HomeViewController: UIViewController {
     
@@ -28,13 +31,29 @@ class HomeViewController: UIViewController {
     
     @IBAction func switchedToggleSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            UserDefaults.standard.setValue(true, forKey: "willNotice")
+            userDefaults.setValue(true, forKey: "willNotice")
             noticeVocabulary()
         } else {
-            UserDefaults.standard.setValue(false, forKey: "willNotice")
+            userDefaults.setValue(false, forKey: "willNotice")
             cancelNotification()
         }
     }
+    
+    @IBAction func tappedIntervalSwitch(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            userDefaults.setValue(1, forKey: "interval")
+            print("intervalを1にセットしました")
+            noticeVocabulary()
+        case 1:
+            userDefaults.setValue(30, forKey: "interval")
+            print("intervalを30にセットしました")
+            noticeVocabulary()
+        default:
+            print("通知間隔を設定できませんでした")
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +80,16 @@ class HomeViewController: UIViewController {
     
     // 初回起動時にbookとwillNoticeプロパティを作成／通知をオンに
     private func firstTimeSetup() {
-        if UserDefaults.standard.dictionary(forKey: "book") == nil {
+        if userDefaults.dictionary(forKey: "book") == nil {
             let dic: [String: String] = [
                 "prospect": "可能性・見込み",
                 "assume": "〜だと考える",
                 "principle": "原理・主義",
                 "depend on": "〜次第である",
             ]
-            UserDefaults.standard.setValue(dic, forKey: "book")
-            UserDefaults.standard.setValue(true, forKey: "willNotice")
+            userDefaults.setValue(dic, forKey: "book")
+            userDefaults.setValue(true, forKey: "willNotice")
+            userDefaults.setValue(30, forKey: "interval")
             
             noticeVocabulary()
         }
@@ -84,7 +104,7 @@ class HomeViewController: UIViewController {
         toggleIntervalSwitch.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         // SwitchViewの切り替え
-        let willNotice = UserDefaults.standard.bool(forKey: "willNotice")
+        let willNotice = userDefaults.bool(forKey: "willNotice")
         if willNotice {
             toggleNotificationSwitch.isOn = true
         } else {
@@ -110,7 +130,7 @@ func noticeVocabulary() {
     // 既存の通知の削除
     center.removeAllPendingNotificationRequests()
     
-    let book = UserDefaults.standard.dictionary(forKey: "book")!
+    let book = userDefaults.dictionary(forKey: "book")!
     let bookWords = book.keys.shuffled()
 //    print("以下の順番で通知します\n", bookWords)
     
@@ -138,33 +158,68 @@ func noticeVocabulary() {
         return
     }
     
-    // 朝6時から夜12時まで毎日30分おきにbookからランダムに通知する
-    for hour in 6...23 {
-        for minute in [0, 30] {
-            // bookをまわりきったらまたはじめから通知
-            if count >= bookWords.count { count = 0 }
-            let word = bookWords[count]
-            let meaning = book[word] as! String
-            
-            let identifier = NSUUID().uuidString
-            let content = UNMutableNotificationContent()
-            content.title = "\(word)"
-            content.body = "\(meaning)"
-            content.sound = UNNotificationSound.default
-            let date = DateComponents(hour: hour, minute: minute)
-            let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
-            
-            let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
-            
-            center.add(request) { (err) in
-                if let err = err {
-                    print("通知を登録できませんでした\(err)")
+    let interval = userDefaults.integer(forKey: "interval")
+    if interval == 30 {
+        // 6時から24時まで毎日30分おきにbookからランダムに通知する
+        for hour in 6...23 {
+            for minute in [0, 30] {
+                // bookをまわりきったらまたはじめから通知
+                if count >= bookWords.count { count = 0 }
+                let word = bookWords[count]
+                let meaning = book[word] as! String
+                
+                let identifier = NSUUID().uuidString
+                let content = UNMutableNotificationContent()
+                content.title = "\(word)"
+                content.body = "\(meaning)"
+                content.sound = UNNotificationSound.default
+                let date = DateComponents(hour: hour, minute: minute)
+                let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
+                
+                let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+                
+                center.add(request) { (err) in
+                    if let err = err {
+                        print("通知を登録できませんでした\(err)")
+                    }
+                }
+                
+                count += 1
+            }
+        }
+    } else if interval == 1 {
+        // 6時から24時まで毎日1時間おきにbookからランダムに通知する
+        for hour in 6...23 {
+            for minute in [0] {
+                for _ in 1...2 {
+                    // bookをまわりきったらまたはじめから通知
+                    if count >= bookWords.count { count = 0 }
+                    let word = bookWords[count]
+                    let meaning = book[word] as! String
+                    
+                    let identifier = NSUUID().uuidString
+                    let content = UNMutableNotificationContent()
+                    content.title = "\(word)"
+                    content.body = "\(meaning)"
+                    content.sound = UNNotificationSound.default
+                    let date = DateComponents(hour: hour, minute: minute)
+                    let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
+                    
+                    let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+                    
+                    center.add(request) { (err) in
+                        if let err = err {
+                            print("通知を登録できませんでした\(err)")
+                        }
+                    }
+                    count += 1
                 }
             }
-            
-            count += 1
         }
+    } else {
+        print("通知を登録できませんでした")
     }
+    
     print("通知します")
 }
 
