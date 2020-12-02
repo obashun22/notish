@@ -45,11 +45,15 @@ class HomeViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             userDefaults.setValue(1, forKey: "interval")
-            print("intervalを1にセットしました")
+//            print("intervalを1にセットしました")
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
             noticeVocabulary()
         case 1:
             userDefaults.setValue(30, forKey: "interval")
-            print("intervalを30にセットしました")
+//            print("intervalを30にセットしました")
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
             noticeVocabulary()
         default:
             print("通知間隔を設定できませんでした")
@@ -218,7 +222,6 @@ func noticeVocabulary() {
     } else {
         print("通知を登録できませんでした")
     }
-    
     print("通知します")
 }
 
