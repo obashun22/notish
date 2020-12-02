@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BFA7C820CD50102793D1C7F /* Pods_Tsutan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28D9C4DD9ACC649D504BF4 /* Pods_Tsutan.framework */; };
 		C00AB999253F0FCF00F3AE0D /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AB998253F0FCF00F3AE0D /* BookViewController.swift */; };
+		C04000CE2577F5C50036D7BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04000CD2577F5C50036D7BB /* GoogleService-Info.plist */; };
 		C0DCEE5E253F4A9E00EA9905 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DCEE5D253F4A9E00EA9905 /* EditViewController.swift */; };
 		C0F850AE253757D700DA21AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F850AD253757D700DA21AF /* AppDelegate.swift */; };
 		C0F850B0253757D700DA21AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F850AF253757D700DA21AF /* SceneDelegate.swift */; };
@@ -19,7 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41D868AF6CE7D83B86CBF930 /* Pods-Tsutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tsutan.debug.xcconfig"; path = "Target Support Files/Pods-Tsutan/Pods-Tsutan.debug.xcconfig"; sourceTree = "<group>"; };
 		C00AB998253F0FCF00F3AE0D /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		C04000CD2577F5C50036D7BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0DCEE5D253F4A9E00EA9905 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C0F850AA253757D700DA21AF /* Tsutan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tsutan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F850AD253757D700DA21AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		C0F850B9253757DB00DA21AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0F850BB253757DB00DA21AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0F850CD2538080A00DA21AF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D70C2A2A40E73E4A8D0F55A3 /* Pods-Tsutan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tsutan.release.xcconfig"; path = "Target Support Files/Pods-Tsutan/Pods-Tsutan.release.xcconfig"; sourceTree = "<group>"; };
+		EC28D9C4DD9ACC649D504BF4 /* Pods_Tsutan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tsutan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFA7C820CD50102793D1C7F /* Pods_Tsutan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +73,8 @@
 			children = (
 				C0F850AC253757D700DA21AF /* Notish */,
 				C0F850AB253757D700DA21AF /* Products */,
+				FE9BE8E7D200F2C5AEFD34CD /* Pods */,
+				DDC40061B387D7E8D6AF78A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +97,7 @@
 				C0F850B6253757DB00DA21AF /* Assets.xcassets */,
 				C0F850B8253757DB00DA21AF /* LaunchScreen.storyboard */,
 				C0F850BB253757DB00DA21AF /* Info.plist */,
+				C04000CD2577F5C50036D7BB /* GoogleService-Info.plist */,
 			);
 			path = Notish;
 			sourceTree = "<group>";
@@ -100,6 +110,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DDC40061B387D7E8D6AF78A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC28D9C4DD9ACC649D504BF4 /* Pods_Tsutan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE9BE8E7D200F2C5AEFD34CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41D868AF6CE7D83B86CBF930 /* Pods-Tsutan.debug.xcconfig */,
+				D70C2A2A40E73E4A8D0F55A3 /* Pods-Tsutan.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +135,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0F850BE253757DB00DA21AF /* Build configuration list for PBXNativeTarget "Tsutan" */;
 			buildPhases = (
+				BD7E21353FEF74E3BED732D5 /* [CP] Check Pods Manifest.lock */,
+				BB7782EBC70747895B31582B /* [CP] Prepare Artifacts */,
 				C0F850A6253757D700DA21AF /* Sources */,
 				C0F850A7253757D700DA21AF /* Frameworks */,
 				C0F850A8253757D700DA21AF /* Resources */,
+				059EF8B657AFEFDF0D19F3FD /* [CP] Embed Pods Frameworks */,
+				E8E45F6FD5C3A0E5496A989A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,12 +190,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F850BA253757DB00DA21AF /* LaunchScreen.storyboard in Resources */,
+				C04000CE2577F5C50036D7BB /* GoogleService-Info.plist in Resources */,
 				C0F850B7253757DB00DA21AF /* Assets.xcassets in Resources */,
 				C0F850B5253757D700DA21AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		059EF8B657AFEFDF0D19F3FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB7782EBC70747895B31582B /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7E21353FEF74E3BED732D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tsutan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E45F6FD5C3A0E5496A989A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tsutan/Pods-Tsutan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0F850A6253757D700DA21AF /* Sources */ = {
@@ -321,12 +430,13 @@
 		};
 		C0F850BF253757DB00DA21AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41D868AF6CE7D83B86CBF930 /* Pods-Tsutan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HR7PYGPB86;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RW5RYRBW72;
 				INFOPLIST_FILE = Notish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,9 +444,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Tsutan;
+				PRODUCT_BUNDLE_IDENTIFIER = tmy.jack.Tutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Tutan;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,12 +454,13 @@
 		};
 		C0F850C0253757DB00DA21AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D70C2A2A40E73E4A8D0F55A3 /* Pods-Tsutan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HR7PYGPB86;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RW5RYRBW72;
 				INFOPLIST_FILE = Notish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -357,9 +468,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.obashun22.Tsutan;
+				PRODUCT_BUNDLE_IDENTIFIER = tmy.jack.Tutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Tutan;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

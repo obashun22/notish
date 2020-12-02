@@ -17,6 +17,7 @@
 */
 
 import UIKit
+import GoogleMobileAds
 import UserNotifications
 
 private let userDefaults = UserDefaults.standard
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var toggleNotificationSwitch: UISwitch!
     @IBOutlet weak var intervalSettingView: UIView!
     @IBOutlet weak var toggleIntervalSwitch: UISegmentedControl!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     @IBAction func switchedToggleSwitch(_ sender: UISwitch) {
         if sender.isOn {
@@ -66,6 +68,13 @@ class HomeViewController: UIViewController {
         self.firstTimeSetup()
         self.setupView()
         self.addTapGesture()
+        self.setupBannerView()
+    }
+    
+    private func setupBannerView() {
+        bannerView.adUnitID = "ca-app-pub-4985853544356101/2313201364"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     private func addTapGesture() {
