@@ -75,6 +75,10 @@ extension EditViewController: UITextFieldDelegate {
         meaningTextField.resignFirstResponder()
     }
     
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.checkAddButtonShouldEnable()
+    }
+    
     // テキストの入力が終わったときの処理
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         // テキストの両端の余分な空白を取り除いて処理
@@ -86,17 +90,16 @@ extension EditViewController: UITextFieldDelegate {
             // 余分な空白を削除して表示
             textField.text = trimmedText
         }
-        self.checkAddButtonShouldEnable()
         return true
     }
     
     // add-btnを有効にするかチェックして問題ない場合は有効にする
     private func checkAddButtonShouldEnable() {
-        let word = wordTextField.text!
-        let meaning = meaningTextField.text!
-        print("word: '\(word)'")
-        print("meaning: '\(meaning)'")
-        if word != "" && meaning != "" {
+        let trimmedWord = wordTextField.text!.trimmingCharacters(in: .whitespaces)
+        let trimmedMeaning = meaningTextField.text!.trimmingCharacters(in: .whitespaces)
+//        print("word: '\(word)'")
+//        print("meaning: '\(meaning)'")
+        if trimmedWord != "" && trimmedMeaning != "" {
             addButtonView.isEnabled = true
         } else {
             addButtonView.isEnabled = false

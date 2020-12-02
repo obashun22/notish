@@ -6,12 +6,14 @@
 //
 
 /*
-ToDo
-AdModの導入
-userDefaults
+# ToDo
+- AdModの導入
+- 1hおきだと19単語以上で通知されないものがでてくる
+ -> 18個未満か通知間隔・許可切替または単語追加・編集で通知内容が変わるので実質解決
+# userDefaultsのkeyと型
 - book: Dic; 単語情報
 - willNotice: Bool; 通知の許可
-- interval: 30 min/1 hour:
+- interval: Int; 30 min/1 hour
 */
 
 import UIKit
@@ -183,7 +185,6 @@ func noticeVocabulary() {
                         print("通知を登録できませんでした\(err)")
                     }
                 }
-                
                 count += 1
             }
         }
@@ -191,29 +192,27 @@ func noticeVocabulary() {
         // 6時から24時まで毎日1時間おきにbookからランダムに通知する
         for hour in 6...23 {
             for minute in [0] {
-                for _ in 1...2 {
-                    // bookをまわりきったらまたはじめから通知
-                    if count >= bookWords.count { count = 0 }
-                    let word = bookWords[count]
-                    let meaning = book[word] as! String
-                    
-                    let identifier = NSUUID().uuidString
-                    let content = UNMutableNotificationContent()
-                    content.title = "\(word)"
-                    content.body = "\(meaning)"
-                    content.sound = UNNotificationSound.default
-                    let date = DateComponents(hour: hour, minute: minute)
-                    let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
-                    
-                    let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
-                    
-                    center.add(request) { (err) in
-                        if let err = err {
-                            print("通知を登録できませんでした\(err)")
-                        }
+                // bookをまわりきったらまたはじめから通知
+                if count >= bookWords.count { count = 0 }
+                let word = bookWords[count]
+                let meaning = book[word] as! String
+                
+                let identifier = NSUUID().uuidString
+                let content = UNMutableNotificationContent()
+                content.title = "\(word)"
+                content.body = "\(meaning)"
+                content.sound = UNNotificationSound.default
+                let date = DateComponents(hour: hour, minute: minute)
+                let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
+                
+                let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+                
+                center.add(request) { (err) in
+                    if let err = err {
+                        print("通知を登録できませんでした\(err)")
                     }
-                    count += 1
                 }
+                count += 1
             }
         }
     } else {
