@@ -24,6 +24,7 @@
 		41D868AF6CE7D83B86CBF930 /* Pods-Tsutan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tsutan.debug.xcconfig"; path = "Target Support Files/Pods-Tsutan/Pods-Tsutan.debug.xcconfig"; sourceTree = "<group>"; };
 		C00AB998253F0FCF00F3AE0D /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		C04000CD2577F5C50036D7BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C040010025791F2A0036D7BB /* Tsutan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tsutan.entitlements; sourceTree = "<group>"; };
 		C0DCEE5D253F4A9E00EA9905 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C0F850AA253757D700DA21AF /* Tsutan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tsutan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F850AD253757D700DA21AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		C0F850A1253757D700DA21AF = {
 			isa = PBXGroup;
 			children = (
+				C040010025791F2A0036D7BB /* Tsutan.entitlements */,
 				C0F850AC253757D700DA21AF /* Notish */,
 				C0F850AB253757D700DA21AF /* Products */,
 				FE9BE8E7D200F2C5AEFD34CD /* Pods */,
@@ -433,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tsutan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RW5RYRBW72;
@@ -457,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tsutan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RW5RYRBW72;

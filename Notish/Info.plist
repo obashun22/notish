@@ -66,5 +66,9 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>AdMob Unit ID Debug</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AdMob Unit ID Release</key>
+	<string>ca-app-pub-4985853544356101/2313201364</string>
 </dict>
 </plist>

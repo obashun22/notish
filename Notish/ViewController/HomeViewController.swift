@@ -71,10 +71,12 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBannerView() {
+        let debugID = Bundle.main.object(forInfoDictionaryKey: "AdMob Unit ID Debug") as! String
+        let releaseID = Bundle.main.object(forInfoDictionaryKey: "AdMob Unit ID Release") as! String
         // デモ広告
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.adUnitID = debugID
         // 本番広告
-        bannerView.adUnitID = "ca-app-pub-4985853544356101/2313201364"
+        bannerView.adUnitID = releaseID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
     }
