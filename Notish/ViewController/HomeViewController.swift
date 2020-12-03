@@ -62,7 +62,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.firstTimeSetup()
@@ -72,6 +71,9 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBannerView() {
+        // デモ広告
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        // 本番広告
         bannerView.adUnitID = "ca-app-pub-4985853544356101/2313201364"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())

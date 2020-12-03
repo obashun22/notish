@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -124,7 +124,6 @@
 				41D868AF6CE7D83B86CBF930 /* Pods-Tsutan.debug.xcconfig */,
 				D70C2A2A40E73E4A8D0F55A3 /* Pods-Tsutan.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
