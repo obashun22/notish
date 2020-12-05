@@ -243,3 +243,17 @@ func cancelNotification() {
     center.removeAllPendingNotificationRequests()
     print("通知しません")
 }
+
+// 通知機能確認のための即通知関数
+func checkNotification() {
+    let content = UNMutableNotificationContent()
+    content.title = "テスト通知"
+    content.body = "Hoge"
+    content.sound = UNNotificationSound.default
+    let request = UNNotificationRequest.init(identifier: "testNotification", content: content, trigger: nil)
+    center.add(request) { (err) in
+        if let err = err {
+            print("通知を登録できませんでした\(err)")
+        }
+    }
+}
