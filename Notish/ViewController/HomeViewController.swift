@@ -50,13 +50,17 @@ class HomeViewController: UIViewController {
 //            print("intervalを1にセットしました")
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)
-            noticeVocabulary()
+            if (userDefaults.bool(forKey: "willNotice")) {
+                noticeVocabulary()
+            }
         case 1:
             userDefaults.setValue(30, forKey: "interval")
 //            print("intervalを30にセットしました")
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)
-            noticeVocabulary()
+            if (userDefaults.bool(forKey: "willNotice")) {
+                noticeVocabulary()
+            }
         default:
             print("通知間隔を設定できませんでした")
         }
